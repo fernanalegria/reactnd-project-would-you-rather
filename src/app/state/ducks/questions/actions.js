@@ -15,7 +15,7 @@ const answerQuestion = ({ id, authedUser, option }) => ({
 });
 
 const resetQuestion = ({ id, authedUser }) => ({
-  type: types.ANSWER_QUESTION,
+  type: types.RESET_QUESTION,
   id,
   authedUser
 });
@@ -30,9 +30,10 @@ export const handleAnswerQuestion = info => dispatch => {
   });
 };
 
-const addQuestion = question => ({
+const addQuestion = (question, authedUser) => ({
   type: types.ADD_QUESTION,
-  question
+  question,
+  authedUser
 });
 
 export const handleAddQuestion = (optionOneText, optionTwoText, callback) => (
@@ -48,7 +49,7 @@ export const handleAddQuestion = (optionOneText, optionTwoText, callback) => (
     author: authedUser
   })
     .then(question => {
-      dispatch(addQuestion(question));
+      dispatch(addQuestion(question, authedUser));
     })
     .then(() => {
       dispatch(hideLoading());
