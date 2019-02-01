@@ -11,6 +11,6 @@ export const getInitialData = () =>
     questions
   }));
 
-export const saveQuestionAnswer = info => _saveLikeToggle(info);
+export const saveQuestionAnswer = info => _saveQuestionAnswer(info);
 
 export const saveQuestion = info => _saveQuestion(info);
