@@ -9,9 +9,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const reduxStore = configureStore();
 
 const RootHtml = () => (
-    <Provider store={reduxStore}>
-      <App />
-    </Provider>
-  );
+  <Provider store={reduxStore}>
+    <App />
+  </Provider>
+);
 
 ReactDOM.render(<RootHtml />, document.getElementById('root'));

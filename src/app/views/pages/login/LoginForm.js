@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { authedUserActions } from '../../../state/ducks/authedUser';
 
 class LoginForm extends Component {
   state = {
@@ -24,13 +26,16 @@ class LoginForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const user = this.props.users.find(
+    const { users, setAuthedUser, history } = this.props;
+    const user = users.find(
       user =>
         user.name === this.state.username &&
         user.password === this.state.password
     );
     if (user) {
-      console.log('Congrats! You are now logged in as: ', user);
+      setAuthedUser(user.id).then(() => {
+        history.push('/questions');
+      });
     } else {
       this.setState({
         isInvalid: true
@@ -89,4 +94,13 @@ const mapStateToProps = ({ users }) => ({
   users: Object.values(users)
 });
 
-export default connect(mapStateToProps)(LoginForm);
+const mapDispatchToProps = {
+  setAuthedUser: id => authedUserActions.handleSetAuthedUser(id)
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(LoginForm)
+);
