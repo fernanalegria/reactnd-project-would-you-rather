@@ -1,44 +1,31 @@
 import React, { Component } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 class SignUpForm extends Component {
   render() {
     return (
-      <form>
-        <div className="form-label-group">
-          <input
-            id="signup-username"
-            type="text"
-            className="form-control"
-            placeholder="Username"
-            required
-            autoFocus
-          />
-          <label htmlFor="signup-username">Username</label>
-        </div>
-        <div className="form-label-group">
-          <input
-            id="signup-password"
+      <Form>
+        <Form.Group controlId="signup-username">
+          <Form.Control type="text" placeholder="Username" required autoFocus />
+          <Form.Label>Username</Form.Label>
+        </Form.Group>
+        <Form.Group controlId="signup-password">
+          <Form.Control type="password" placeholder="Password" required />
+          <Form.Label>Password</Form.Label>
+        </Form.Group>
+        <Form.Group controlId="signup-confirm-password">
+          <Form.Control
             type="password"
-            className="form-control"
-            placeholder="Password"
-            required
-          />
-          <label htmlFor="signup-password">Password</label>
-        </div>
-        <div className="form-label-group">
-          <input
-            id="signup-confirm-password"
-            type="password"
-            className="form-control"
             placeholder="Confirm password"
             required
           />
-          <label htmlFor="signup-confirm-password">Confirm password</label>
-        </div>
-        <button className="btn btn-lg btn-primary btn-block" type="submit">
+          <Form.Label>Confirm password</Form.Label>
+        </Form.Group>
+        <Button variant="primary" type="submit" className="btn-lg btn-block">
           Sign up
-        </button>
-      </form>
+        </Button>
+      </Form>
     );
   }
 }

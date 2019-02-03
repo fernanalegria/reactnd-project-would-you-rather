@@ -32,13 +32,6 @@ code {
   margin: 0 auto;
 }
 
-.nav-item > button {
-  background-color: transparent;
-  &:focus {
-    outline: none;
-  }
-}
-
 .invalid-field {
   border-color: #dc3545 !important;
 }
