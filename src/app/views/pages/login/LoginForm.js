@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { authedUserActions } from '../../../state/ducks/authedUser';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 class LoginForm extends Component {
   state = {
@@ -46,10 +48,9 @@ class LoginForm extends Component {
   render() {
     const { username, password, isInvalid } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="form-label-group">
-          <input
-            id="login-username"
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Group controlId="login-username">
+          <Form.Control
             type="text"
             className={`form-control ${isInvalid && 'invalid-field'}`}
             placeholder="Username"
@@ -58,11 +59,10 @@ class LoginForm extends Component {
             value={username}
             onChange={this.handleUsernameChange}
           />
-          <label htmlFor="login-username">Username</label>
-        </div>
-        <div className="form-label-group">
-          <input
-            id="login-password"
+          <Form.Label>Username</Form.Label>
+        </Form.Group>
+        <Form.Group controlId="login-password">
+          <Form.Control
             type="password"
             className={`form-control ${isInvalid && 'invalid-field'}`}
             placeholder="Password"
@@ -70,22 +70,23 @@ class LoginForm extends Component {
             value={password}
             onChange={this.handlePasswordChange}
           />
-          <label htmlFor="login-password">Password</label>
-        </div>
+          <Form.Label>Password</Form.Label>
+        </Form.Group>
         <div className={`invalid-feedback ${isInvalid && 'show-invalid'}`}>
           Invalid username or password
         </div>
-        <div className="checkbox mb-3">
-          <input type="checkbox" value="remember-me" /> Remember me
+        <div className="mb-3">
+          <Form.Check type="checkbox" label="Remember me" />
         </div>
-        <button
-          className="btn btn-lg btn-primary btn-block"
+        <Button
+          variant="primary"
           type="submit"
           disabled={!username || !password}
+          className="btn-lg btn-block"
         >
           Sign in
-        </button>
-      </form>
+        </Button>
+      </Form>
     );
   }
 }

@@ -6,15 +6,10 @@ html {
 .card-login {
   width: 100%;
   max-width: 350px;
-  padding: 15px;
   margin: 0 auto;
-  > .card-header {
-    background-color: transparent;
-    border: none;
-  }
 }
 
-.form-label-group {
+.form-group {
   position: relative;
   margin-bottom: 1rem;
   > {
