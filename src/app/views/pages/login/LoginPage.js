@@ -18,19 +18,16 @@ class LoginPage extends Component {
   };
 
   render() {
+    const { register } = this.state;
+
     return (
-      <BaseContainer>
+      <BaseContainer align="center">
         <Card className="card-login">
           <Card.Header>
-            <Nav
-              variant="tabs"
-              defaultActiveKey="#first"
-              className="nav-justified"
-            >
+            <Nav variant="tabs" className="nav-justified">
               <Nav.Item>
                 <Nav.Link
-                  className={`nav-link w-100 ${!this.state.register &&
-                    'active'}`}
+                  className={`nav-link w-100 ${!register && 'active'}`}
                   onClick={() => this.toggleForm(false)}
                 >
                   Log in
@@ -38,8 +35,7 @@ class LoginPage extends Component {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
-                  className={`nav-link w-100 ${this.state.register &&
-                    'active'}`}
+                  className={`nav-link w-100 ${register && 'active'}`}
                   onClick={() => this.toggleForm(true)}
                 >
                   Sign up

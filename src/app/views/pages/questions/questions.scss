@@ -1,0 +1,29 @@
+.poll {
+  margin: 20px;
+}
+
+.poll-details {
+  padding-left: 20px;
+  border-left: 1px solid #eee;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-text {
+    font-size: 0.8em;
+  }
+}
+
+.poll-list {
+  padding-left: 0;
+  li {
+    list-style-type: none;
+  }
+}

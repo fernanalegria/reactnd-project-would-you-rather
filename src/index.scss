@@ -1,3 +1,5 @@
+@import './app/views/styles/colors.scss';
+
 html,
 body,
 #root,
@@ -38,4 +40,31 @@ code {
 
 .show-invalid {
   display: block !important;
+}
+
+.scroll-box {
+  overflow-y: auto;
+  height: 486px;
+  &::-webkit-scrollbar-thumb {
+    background-color: $pale-sky;
+  }
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track {
+    background-color: $light-grey;
+  }
+  &::-webkit-scrollbar {
+    width: 11px;
+  }
+}
+
+.btn > a {
+  color: inherit;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.btn:focus {
+  box-shadow: none !important;
 }

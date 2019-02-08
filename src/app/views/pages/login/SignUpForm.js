@@ -22,7 +22,7 @@ class SignUpForm extends Component {
           />
           <Form.Label>Confirm password</Form.Label>
         </Form.Group>
-        <Button variant="primary" type="submit" className="btn-lg btn-block">
+        <Button variant="primary" type="submit" size="lg" block>
           Sign up
         </Button>
       </Form>
