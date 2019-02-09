@@ -2,7 +2,7 @@ import * as types from './types';
 import { questionTypes } from '../questions';
 import { createReducer } from '../../utils';
 
-export default createReducer(null)({
+export default createReducer({})({
   [types.RECEIVE_USERS]: (state, action) => ({
     ...state,
     ...action.users
@@ -24,7 +24,7 @@ export default createReducer(null)({
       ...state[action.authedUser],
       answers: {
         ...state[action.authedUser].answers,
-        [action.id]: action.option
+        [action.qid]: action.answer
       }
     }
   }),

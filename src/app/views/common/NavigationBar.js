@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import './NavigationBar.scss';
+import './common.scss';
 
 const NavigationBar = props => {
   const { pathname } = props.location;

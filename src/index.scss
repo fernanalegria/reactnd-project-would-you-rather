@@ -68,3 +68,26 @@ code {
 .btn:focus {
   box-shadow: none !important;
 }
+
+.user-card {
+  margin: 20px;
+}
+
+.user-card-details {
+  padding-left: 20px;
+  border-left: 1px solid #eee;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-text {
+    font-size: 0.8em;
+  }
+}

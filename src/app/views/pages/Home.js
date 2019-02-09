@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import NavigationBar from '../common/NavigationBar';
-import QuestionsPage, { Question } from './questions';
+import QuestionsPage, { QuestionContainer } from './questions';
 import { connect } from 'react-redux';
 import BaseContainer from '../common/BaseContainer';
 
@@ -13,7 +13,7 @@ class Home extends Component {
         <BaseContainer align="top">
           <Switch>
             <Route path="/questions" exact component={QuestionsPage} />
-            <Route path="/questions/:id" component={Question} />
+            <Route path="/questions/:id" component={QuestionContainer} />
           </Switch>
         </BaseContainer>
       </Fragment>

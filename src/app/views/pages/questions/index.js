@@ -1,5 +1,5 @@
 import { default as QuestionsPage } from './QuestionsPage';
-import { default as Question } from './Question';
+import { default as QuestionContainer } from './QuestionContainer';
 
-export { Question };
+export { QuestionContainer };
 export default QuestionsPage;

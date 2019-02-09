@@ -1,7 +1,7 @@
 import * as types from './types';
 import { createReducer } from '../../utils';
 
-export default createReducer(null)({
+export default createReducer({})({
   [types.RECEIVE_QUESTIONS]: (state, action) => ({
     ...state,
     ...action.questions
@@ -12,11 +12,11 @@ export default createReducer(null)({
   }),
   [types.ANSWER_QUESTION]: (state, action) => ({
     ...state,
-    [action.id]: {
-      ...state[action.id],
-      [action.option]: {
-        ...state[action.id][action.option],
-        votes: [...state[action.id][action.option].votes, action.authedUser]
+    [action.qid]: {
+      ...state[action.qid],
+      [action.answer]: {
+        ...state[action.qid][action.answer],
+        votes: [...state[action.qid][action.answer].votes, action.authedUser]
       }
     }
   }),
