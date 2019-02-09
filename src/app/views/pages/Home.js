@@ -6,6 +6,7 @@ import NewQuestion from './newQuestion';
 import { connect } from 'react-redux';
 import BaseContainer from '../common/BaseContainer';
 import LoadingBar from 'react-redux-loading';
+import LeaderBoard from './leaderboard';
 
 class Home extends Component {
   render() {
@@ -18,6 +19,7 @@ class Home extends Component {
             <Route path="/questions" exact component={QuestionsPage} />
             <Route path="/questions/:id" component={QuestionContainer} />
             <Route path="/add" component={NewQuestion} />
+            <Route path="/leaderboard" component={LeaderBoard} />
           </Switch>
         </BaseContainer>
       </Fragment>

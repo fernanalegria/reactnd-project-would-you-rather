@@ -73,7 +73,7 @@ class NewQuestion extends Component {
             </Form.Group>
             <Card.Title className="text-center">?</Card.Title>
             <Button
-              variant="primary"
+              variant="secondary"
               type="submit"
               disabled={!optionOneText || !optionTwoText}
               size="lg"
