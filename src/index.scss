@@ -1,3 +1,5 @@
+@import './app/views/styles/colors.scss';
+
 html,
 body,
 #root,
@@ -38,4 +40,54 @@ code {
 
 .show-invalid {
   display: block !important;
+}
+
+.scroll-box {
+  overflow-y: auto;
+  height: 486px;
+  &::-webkit-scrollbar-thumb {
+    background-color: $pale-sky;
+  }
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track {
+    background-color: $light-grey;
+  }
+  &::-webkit-scrollbar {
+    width: 11px;
+  }
+}
+
+.btn > a {
+  color: inherit;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.user-card {
+  margin: 20px;
+}
+
+.user-card-details {
+  padding-left: 20px;
+  border-left: 1px solid #eee;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p.one-liner {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-text {
+    font-size: 0.8em;
+  }
 }

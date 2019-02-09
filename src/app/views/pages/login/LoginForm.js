@@ -82,7 +82,8 @@ class LoginForm extends Component {
           variant="primary"
           type="submit"
           disabled={!username || !password}
-          className="btn-lg btn-block"
+          size="lg"
+          block
         >
           Sign in
         </Button>

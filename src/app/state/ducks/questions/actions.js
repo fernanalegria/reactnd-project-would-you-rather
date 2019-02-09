@@ -7,27 +7,29 @@ export const receiveQuestions = questions => ({
   questions
 });
 
-const answerQuestion = ({ id, authedUser, option }) => ({
+const answerQuestion = ({ qid, authedUser, answer }) => ({
   type: types.ANSWER_QUESTION,
-  id,
+  qid,
   authedUser,
-  option
+  answer
 });
 
-const resetQuestion = ({ id, authedUser }) => ({
-  type: types.RESET_QUESTION,
-  id,
-  authedUser
-});
+// const resetQuestion = ({ id, authedUser }) => ({
+//   type: types.RESET_QUESTION,
+//   id,
+//   authedUser
+// });
 
-export const handleAnswerQuestion = info => dispatch => {
-  const { id, authedUser } = info;
-  dispatch(answerQuestion(info));
-  return saveQuestionAnswer(info).catch(e => {
-    console.warn('Error in handleAnswerQuestion: ', e);
-    dispatch(resetQuestion({ id, authedUser }));
-    alert('There was an error saving the answer. Please try again.');
-  });
+export const handleAnswerQuestion = info => (dispatch, getState) => {
+  const { authedUser } = getState();
+  return saveQuestionAnswer({ ...info, authedUser })
+    .then(() => {
+      dispatch(answerQuestion({ ...info, authedUser }));
+    })
+    .catch(e => {
+      console.warn('Error in handleAnswerQuestion: ', e);
+      alert('There was an error saving the answer. Please try again.');
+    });
 };
 
 const addQuestion = (question, authedUser) => ({

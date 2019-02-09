@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 import { commonActions } from '../state/ducks/common';
 import { isEmptyObject } from '../utils/helpers';
 import LoginPage from './pages/login';
-import QuestionsPage from './pages/questions/QuestionsPage';
+import Home from './pages/Home';
 import LoadingBar from 'react-redux-loading';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ProtectedRoute from './common/ProtectedRoute';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
   componentDidMount() {
@@ -18,10 +21,13 @@ class App extends Component {
         <div className="app">
           <LoadingBar />
           {!this.props.loading && (
-            <div>
+            <Switch>
               <Route path="/" exact component={LoginPage} />
-              <Route path="/questions" component={QuestionsPage} />
-            </div>
+              <ProtectedRoute
+                path="/(questions|add|leaderboard)"
+                component={Home}
+              />
+            </Switch>
           )}
         </div>
       </Router>
@@ -36,6 +42,8 @@ const mapStateToProps = ({ users }) => ({
 const mapDispatchToProps = {
   handleFetchData: () => commonActions.handleFetchData()
 };
+
+library.add(faCheckCircle);
 
 export default connect(
   mapStateToProps,
