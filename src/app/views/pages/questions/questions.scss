@@ -9,4 +9,12 @@
 
 .chosen-option {
   color: white;
+  .card-body {
+    position: relative;
+    .top-right-icon {
+      position: absolute;
+      top: 0.5em;
+      right: 0.5em;
+    }
+  }
 }
