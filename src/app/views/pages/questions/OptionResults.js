@@ -1,7 +1,5 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -11,16 +9,10 @@ const OptionResults = ({ option, totalVotes, chosen, className = '' }) => (
     bg={chosen && 'info'}
   >
     <Card.Body>
-      <Card.Text>
-        <Row className="no-gutters">
-          <Col>{`Would you rather ${option.text}?`}</Col>
-          <Col md="auto">
-            {chosen && (
-              <FontAwesomeIcon icon="check-circle" className="float-right" />
-            )}
-          </Col>
-        </Row>
-      </Card.Text>
+      {chosen && (
+        <FontAwesomeIcon icon="check-circle" className="top-right-icon" />
+      )}
+      <Card.Text>{`Would you rather ${option.text}?`}</Card.Text>
       <ProgressBar
         now={option.votesPerc}
         label={`${option.votesPerc}%`}
