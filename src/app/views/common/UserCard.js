@@ -4,9 +4,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import UserAvatar from './UserAvatar';
 
-const UserCard = ({ authorName, avatarURL, children }) => (
+const UserCard = ({ authorName, avatarURL, askedBy, children }) => (
   <Card className="user-card">
-    <Card.Header>{authorName} asks:</Card.Header>
+    <Card.Header>
+      {askedBy ? `Asked by ${authorName}:` : `${authorName} asks:`}
+    </Card.Header>
     <Card.Body>
       <Row className="no-gutters">
         <Col md="auto">

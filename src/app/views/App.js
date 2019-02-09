@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import LoadingBar from 'react-redux-loading';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './common/ProtectedRoute';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
   componentDidMount() {
@@ -40,6 +42,8 @@ const mapStateToProps = ({ users }) => ({
 const mapDispatchToProps = {
   handleFetchData: () => commonActions.handleFetchData()
 };
+
+library.add(faCheckCircle);
 
 export default connect(
   mapStateToProps,

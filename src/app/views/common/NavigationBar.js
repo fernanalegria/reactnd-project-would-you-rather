@@ -7,25 +7,26 @@ import './common.scss';
 
 const NavigationBar = props => {
   const { pathname } = props.location;
+  console.log('Pathname', pathname);
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand>Would you rather?</Navbar.Brand>
       <Nav className="mr-auto">
         <Link
           to="/questions"
-          className={`nav-link ${pathname.includes('questions') && 'active'}`}
+          className={`nav-link ${pathname === '/questions' ? 'active' : ''}`}
         >
           Questions
         </Link>
         <Link
           to="/add"
-          className={`nav-link ${pathname.includes('add') && 'active'}`}
+          className={`nav-link ${pathname === '/add' ? 'active' : ''}`}
         >
           New Question
         </Link>
         <Link
           to="/leaderboard"
-          className={`nav-link ${pathname.includes('leaderboard') && 'active'}`}
+          className={`nav-link ${pathname === '/leaderboard' ? 'active' : ''}`}
         >
           Leaderboard
         </Link>

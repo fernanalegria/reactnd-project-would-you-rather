@@ -81,7 +81,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  p {
+  p.one-liner {
     min-width: 0;
     white-space: nowrap;
     overflow: hidden;

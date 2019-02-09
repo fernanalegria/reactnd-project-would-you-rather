@@ -38,6 +38,7 @@ class Question extends Component {
       <UserCard
         authorName={question.author.name}
         avatarURL={question.author.avatarURL}
+        askedBy={false}
       >
         <Form className="card-block pl-3" onSubmit={this.handleSubmit}>
           <Card.Title>Would you rather...</Card.Title>
@@ -74,15 +75,9 @@ class Question extends Component {
   }
 }
 
-const mapStateToProps = ({ questions, users, authedUser }, props) => {
-  const { id } = props;
-
-  return {
-    question: questions[id]
-      ? { ...questions[id], author: users[questions[id].author] }
-      : null
-  };
-};
+const mapStateToProps = ({ questions, users }, { id }) => ({
+  question: { ...questions[id], author: users[questions[id].author] }
+});
 
 const mapDispatchToProps = {
   answerQuestion: info => questionActions.handleAnswerQuestion(info)

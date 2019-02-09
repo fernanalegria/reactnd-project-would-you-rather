@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PollsList from './PollsList';
+import NoPolls from './NoPolls';
 import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
 import { connect } from 'react-redux';
@@ -43,9 +44,23 @@ class QuestionsPage extends Component {
           </Nav>
         </Card.Header>
         <Card.Body className="scroll-box">
-          <PollsList
-            pollIds={answered ? answeredQuestions : unansweredQuestions}
-          />
+          {answered ? (
+            answeredQuestions.length > 0 ? (
+              <PollsList pollIds={answeredQuestions} />
+            ) : (
+              <NoPolls
+                text="Ops! It seems like you've already answered all the questions.
+            Try adding new ones :)"
+              />
+            )
+          ) : unansweredQuestions.length > 0 ? (
+            <PollsList pollIds={unansweredQuestions} />
+          ) : (
+            <NoPolls
+              text="Ops! It seems like you've already answered all the questions.
+            Try adding new ones :)"
+            />
+          )}
         </Card.Body>
       </Card>
     );

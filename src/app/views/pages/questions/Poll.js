@@ -9,10 +9,11 @@ const Poll = ({ question }) =>
     <UserCard
       authorName={question.author.name}
       avatarURL={question.author.avatarURL}
+      askedBy={false}
     >
       <div className="card-block pl-3">
         <Card.Title>Would you rather...</Card.Title>
-        <Card.Text>{`${question.optionOne.text} or ${
+        <Card.Text className="one-liner">{`${question.optionOne.text} or ${
           question.optionTwo.text
         }?`}</Card.Text>
         <Link
