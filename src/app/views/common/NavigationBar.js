@@ -7,7 +7,6 @@ import './common.scss';
 
 const NavigationBar = props => {
   const { pathname } = props.location;
-  console.log('Pathname', pathname);
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand>Would you rather?</Navbar.Brand>

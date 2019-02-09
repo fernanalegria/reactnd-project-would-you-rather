@@ -27,15 +27,5 @@ export default createReducer({})({
         [action.qid]: action.answer
       }
     }
-  }),
-  [questionTypes.RESET_QUESTION]: (state, action) => {
-    const { [action.id]: omit, ...res } = state[action.authedUser].answers;
-    return {
-      ...state,
-      [action.authedUser]: {
-        ...state[action.authedUser],
-        answers: res
-      }
-    };
-  }
+  })
 });
