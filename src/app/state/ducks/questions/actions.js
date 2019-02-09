@@ -14,12 +14,6 @@ const answerQuestion = ({ qid, authedUser, answer }) => ({
   answer
 });
 
-// const resetQuestion = ({ id, authedUser }) => ({
-//   type: types.RESET_QUESTION,
-//   id,
-//   authedUser
-// });
-
 export const handleAnswerQuestion = info => (dispatch, getState) => {
   const { authedUser } = getState();
   return saveQuestionAnswer({ ...info, authedUser })
