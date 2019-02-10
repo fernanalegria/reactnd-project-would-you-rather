@@ -9,7 +9,12 @@ import LoadingBar from 'react-redux-loading';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './common/ProtectedRoute';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCheckCircle, faUpload, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCheckCircle,
+  faUpload,
+  faExclamationTriangle
+} from '@fortawesome/free-solid-svg-icons';
+import { LastLocationProvider } from 'react-router-last-location';
 
 class App extends Component {
   componentDidMount() {
@@ -19,19 +24,21 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="app">
-          <LoadingBar className="initial-loading-bar" scope="initial" />
-          {!this.props.loading && (
-            <Switch>
-              <Route path="/" exact component={LoginPage} />
-              <ProtectedRoute
-                path="/(questions|add|leaderboard)"
-                component={Home}
-              />
-              <Route component={NoMatch} />
-            </Switch>
-          )}
-        </div>
+        <LastLocationProvider>
+          <div className="app">
+            <LoadingBar className="initial-loading-bar" scope="initial" />
+            {!this.props.loading && (
+              <Switch>
+                <Route path="/" exact component={LoginPage} />
+                <ProtectedRoute
+                  path="/(questions|add|leaderboard)"
+                  component={Home}
+                />
+                <Route component={NoMatch} />
+              </Switch>
+            )}
+          </div>
+        </LastLocationProvider>
       </Router>
     );
   }

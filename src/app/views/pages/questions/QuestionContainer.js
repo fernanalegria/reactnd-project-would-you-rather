@@ -19,15 +19,13 @@ const QuestionContainer = props => {
   }
 };
 
-const mapStateToProps = ({ authedUser, users }, props) => {
+const mapStateToProps = ({ authedUser, users, questions }, props) => {
   const { id } = props.match.params;
-  const answers = users[authedUser]
-    ? Object.keys(users[authedUser].answers)
-    : null;
+  const answers = Object.keys(users[authedUser].answers);
 
   return {
     id,
-    results: answers ? answers.includes(id) : null
+    results: questions[id] ? answers.includes(id) : null
   };
 };
 
