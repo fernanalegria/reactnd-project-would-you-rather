@@ -32,10 +32,6 @@ class NewQuestion extends Component {
     e.preventDefault();
     addQuestion(optionOneText, optionTwoText).then(() => {
       history.push('/questions');
-      this.setState({
-        optionOneText: '',
-        optionTwoText: ''
-      });
     });
   };
 
