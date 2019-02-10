@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import { questionActions } from '../../../state/ducks/questions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class NewQuestion extends Component {
   state = {
@@ -27,8 +28,10 @@ class NewQuestion extends Component {
 
   handleSubmit = e => {
     const { optionOneText, optionTwoText } = this.state;
+    const { addQuestion, history } = this.props;
     e.preventDefault();
-    this.props.addQuestion(optionOneText, optionTwoText).then(() => {
+    addQuestion(optionOneText, optionTwoText).then(() => {
+      history.push('/questions');
       this.setState({
         optionOneText: '',
         optionTwoText: ''
@@ -93,7 +96,9 @@ const mapDispatchToProps = {
     questionActions.handleAddQuestion(optionOneText, optionTwoText)
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(NewQuestion);
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(NewQuestion)
+);
