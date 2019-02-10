@@ -8,7 +8,7 @@ import LoadingBar from 'react-redux-loading';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './common/ProtectedRoute';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faUpload } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
   componentDidMount() {
@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
-          <LoadingBar />
+          <LoadingBar className="initial-loading-bar" scope="initial" />
           {!this.props.loading && (
             <Switch>
               <Route path="/" exact component={LoginPage} />
@@ -43,7 +43,7 @@ const mapDispatchToProps = {
   handleFetchData: () => commonActions.handleFetchData()
 };
 
-library.add(faCheckCircle);
+library.add([faCheckCircle, faUpload]);
 
 export default connect(
   mapStateToProps,

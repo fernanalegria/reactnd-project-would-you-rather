@@ -29,10 +29,9 @@ class LoginForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { users, setAuthedUser, history } = this.props;
+    const { username, password } = this.state;
     const user = users.find(
-      user =>
-        user.name === this.state.username &&
-        user.password === this.state.password
+      user => user.name === username && user.password === password
     );
     if (user) {
       setAuthedUser(user.id).then(() => {
@@ -52,7 +51,7 @@ class LoginForm extends Component {
         <Form.Group controlId="login-username">
           <Form.Control
             type="text"
-            className={`form-control ${isInvalid && 'invalid-field'}`}
+            className={isInvalid ? 'invalid-field' : ''}
             placeholder="Username"
             required
             autoFocus
@@ -64,20 +63,20 @@ class LoginForm extends Component {
         <Form.Group controlId="login-password">
           <Form.Control
             type="password"
-            className={`form-control ${isInvalid && 'invalid-field'}`}
+            className={isInvalid ? 'invalid-field' : ''}
             placeholder="Password"
             required
             value={password}
             onChange={this.handlePasswordChange}
           />
           <Form.Label>Password</Form.Label>
+          <Form.Control.Feedback
+            type="invalid"
+            className={isInvalid ? 'show-invalid' : ''}
+          >
+            Invalid username or password
+          </Form.Control.Feedback>
         </Form.Group>
-        <div className={`invalid-feedback ${isInvalid && 'show-invalid'}`}>
-          Invalid username or password
-        </div>
-        <div className="mb-3">
-          <Form.Check type="checkbox" label="Remember me" />
-        </div>
         <Button
           variant="primary"
           type="submit"

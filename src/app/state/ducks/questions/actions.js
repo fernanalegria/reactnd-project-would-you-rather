@@ -32,13 +32,13 @@ const addQuestion = (question, authedUser) => ({
   authedUser
 });
 
-export const handleAddQuestion = (optionOneText, optionTwoText, callback) => (
+export const handleAddQuestion = (optionOneText, optionTwoText) => (
   dispatch,
   getState
 ) => {
   const { authedUser } = getState();
 
-  dispatch(showLoading());
+  dispatch(showLoading('home'));
   return saveQuestion({
     optionOneText,
     optionTwoText,
@@ -48,9 +48,6 @@ export const handleAddQuestion = (optionOneText, optionTwoText, callback) => (
       dispatch(addQuestion(question, authedUser));
     })
     .then(() => {
-      dispatch(hideLoading());
-      if (callback) {
-        callback();
-      }
+      dispatch(hideLoading('home'));
     });
 };

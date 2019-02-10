@@ -1,4 +1,6 @@
 import * as types from './types';
+import { saveUser } from '../../../../server/api';
+import { showLoading, hideLoading } from 'react-redux-loading';
 
 export const receiveUsers = users => ({
   type: types.RECEIVE_USERS,
@@ -10,5 +12,17 @@ const addUser = user => ({
   user
 });
 
-// TODO: create functions in _DATA.js and api.js to save new users in the fake db
-//       and make the request from a thunk action creator
+export const handleAddUser = (name, password, avatarURL) => dispatch => {
+  dispatch(showLoading('initial'));
+  return saveUser({
+    name,
+    password,
+    avatarURL
+  })
+    .then(user => {
+      dispatch(addUser(user));
+    })
+    .then(() => {
+      dispatch(hideLoading('initial'));
+    });
+};

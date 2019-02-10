@@ -34,14 +34,6 @@ code {
   margin: 0 auto;
 }
 
-.invalid-field {
-  border-color: $punch !important;
-}
-
-.show-invalid {
-  display: block !important;
-}
-
 .scroll-box {
   overflow-y: auto;
   height: 486px;
@@ -89,4 +81,17 @@ code {
   .card-text {
     font-size: 0.8em;
   }
+}
+
+.initial-loading-bar {
+  background-color: $azure-radiance;
+}
+
+.home-loading-bar {
+  background-color: $pale-sky;
+}
+
+.initial-loading-bar,
+.home-loading-bar {
+  height: 2px;
 }

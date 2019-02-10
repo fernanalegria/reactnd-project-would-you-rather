@@ -5,11 +5,16 @@ const setAuthedUser = id => ({
   id
 });
 
-export const unsetAuthedUser = () => ({
+const unsetAuthedUser = () => ({
   type: types.UNSET_AUTHED_USER
 });
 
 export const handleSetAuthedUser = id => dispatch => {
   dispatch(setAuthedUser(id));
+  return Promise.resolve();
+};
+
+export const handleUnsetAuthedUser = () => dispatch => {
+  dispatch(unsetAuthedUser());
   return Promise.resolve();
 };

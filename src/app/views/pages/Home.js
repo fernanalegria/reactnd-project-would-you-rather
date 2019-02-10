@@ -13,7 +13,7 @@ class Home extends Component {
     return (
       <Fragment>
         <NavigationBar />
-        <LoadingBar />
+        <LoadingBar className="home-loading-bar" scope="home" />
         <BaseContainer align="top">
           <Switch>
             <Route path="/questions" exact component={QuestionsPage} />
