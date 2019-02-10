@@ -48,7 +48,7 @@ class QuestionsPage extends Component {
             answeredQuestions.length > 0 ? (
               <PollsList pollIds={answeredQuestions} />
             ) : (
-              <NoPolls text="It seems like you haven't answered any questions yet. Let's play!" />
+              <NoPolls text="It seems like you haven't answered any question yet. Let's play!" />
             )
           ) : unansweredQuestions.length > 0 ? (
             <PollsList pollIds={unansweredQuestions} />

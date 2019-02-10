@@ -4,11 +4,12 @@ import { commonActions } from '../state/ducks/common';
 import { isEmptyObject } from '../utils/helpers';
 import LoginPage from './pages/login';
 import Home from './pages/Home';
+import NoMatch from './pages/NoMatch';
 import LoadingBar from 'react-redux-loading';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './common/ProtectedRoute';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCheckCircle, faUpload } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faUpload, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
   componentDidMount() {
@@ -27,6 +28,7 @@ class App extends Component {
                 path="/(questions|add|leaderboard)"
                 component={Home}
               />
+              <Route component={NoMatch} />
             </Switch>
           )}
         </div>
@@ -43,7 +45,7 @@ const mapDispatchToProps = {
   handleFetchData: () => commonActions.handleFetchData()
 };
 
-library.add([faCheckCircle, faUpload]);
+library.add([faCheckCircle, faUpload, faExclamationTriangle]);
 
 export default connect(
   mapStateToProps,
