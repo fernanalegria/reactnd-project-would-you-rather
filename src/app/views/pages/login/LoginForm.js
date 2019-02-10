@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { withLastLocation } from 'react-router-last-location';
 import { authedUserActions } from '../../../state/ducks/authedUser';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -28,14 +29,23 @@ class LoginForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { users, setAuthedUser, history } = this.props;
+    const { users, setAuthedUser, history, lastLocation } = this.props;
     const { username, password } = this.state;
     const user = users.find(
       user => user.name === username && user.password === password
     );
     if (user) {
       setAuthedUser(user.id).then(() => {
-        history.push('/questions');
+        if (
+          lastLocation &&
+          (lastLocation.pathname.includes('questions') ||
+            lastLocation.pathname.includes('add') ||
+            lastLocation.pathname.includes('leaderboard'))
+        ) {
+          history.push(lastLocation);
+        } else {
+          history.push('/questions');
+        }
       });
     } else {
       this.setState({
@@ -99,9 +109,11 @@ const mapDispatchToProps = {
   setAuthedUser: id => authedUserActions.handleSetAuthedUser(id)
 };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(LoginForm)
+export default withLastLocation(
+  withRouter(
+    connect(
+      mapStateToProps,
+      mapDispatchToProps
+    )(LoginForm)
+  )
 );
