@@ -4,10 +4,10 @@ import './common.scss';
 
 class UserAvatar extends Component {
   render() {
-    const { url } = this.props;
+    const { url, size = '' } = this.props;
     const avatar = url ? (
       <div
-        className="user-avatar"
+        className={`user-avatar ${size === 'sm' ? size : ''}`}
         style={{
           backgroundImage: `url(${url})`
         }}

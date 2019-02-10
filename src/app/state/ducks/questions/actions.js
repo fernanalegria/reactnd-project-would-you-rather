@@ -32,7 +32,7 @@ const addQuestion = (question, authedUser) => ({
   authedUser
 });
 
-export const handleAddQuestion = (optionOneText, optionTwoText, callback) => (
+export const handleAddQuestion = (optionOneText, optionTwoText) => (
   dispatch,
   getState
 ) => {
@@ -49,8 +49,5 @@ export const handleAddQuestion = (optionOneText, optionTwoText, callback) => (
     })
     .then(() => {
       dispatch(hideLoading('home'));
-      if (callback) {
-        callback();
-      }
     });
 };

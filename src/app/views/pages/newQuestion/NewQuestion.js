@@ -28,7 +28,7 @@ class NewQuestion extends Component {
   handleSubmit = e => {
     const { optionOneText, optionTwoText } = this.state;
     e.preventDefault();
-    this.props.addQuestion(optionOneText, optionTwoText, () => {
+    this.props.addQuestion(optionOneText, optionTwoText).then(() => {
       this.setState({
         optionOneText: '',
         optionTwoText: ''
@@ -89,8 +89,8 @@ class NewQuestion extends Component {
 }
 
 const mapDispatchToProps = {
-  addQuestion: (optionOneText, optionTwoText, cb) =>
-    questionActions.handleAddQuestion(optionOneText, optionTwoText, cb)
+  addQuestion: (optionOneText, optionTwoText) =>
+    questionActions.handleAddQuestion(optionOneText, optionTwoText)
 };
 
 export default connect(
