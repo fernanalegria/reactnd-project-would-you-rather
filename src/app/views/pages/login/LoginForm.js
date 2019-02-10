@@ -52,7 +52,7 @@ class LoginForm extends Component {
         <Form.Group controlId="login-username">
           <Form.Control
             type="text"
-            className={`form-control ${isInvalid && 'invalid-field'}`}
+            className={isInvalid ? 'invalid-field' : ''}
             placeholder="Username"
             required
             autoFocus
@@ -64,17 +64,20 @@ class LoginForm extends Component {
         <Form.Group controlId="login-password">
           <Form.Control
             type="password"
-            className={`form-control ${isInvalid && 'invalid-field'}`}
+            className={isInvalid ? 'invalid-field' : ''}
             placeholder="Password"
             required
             value={password}
             onChange={this.handlePasswordChange}
           />
           <Form.Label>Password</Form.Label>
+          <Form.Control.Feedback
+            type="invalid"
+            className={isInvalid ? 'show-invalid' : ''}
+          >
+            Invalid username or password
+          </Form.Control.Feedback>
         </Form.Group>
-        <div className={`invalid-feedback ${isInvalid && 'show-invalid'}`}>
-          Invalid username or password
-        </div>
         <div className="mb-3">
           <Form.Check type="checkbox" label="Remember me" />
         </div>

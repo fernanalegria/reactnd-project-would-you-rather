@@ -44,7 +44,7 @@ class LoginPage extends Component {
             </Nav>
           </Card.Header>
           <Card.Body>
-            {this.state.register ? <SignUpForm /> : <LoginForm />}
+            {this.state.register ? <SignUpForm toggleForm={this.toggleForm} /> : <LoginForm />}
           </Card.Body>
         </Card>
       </BaseContainer>

@@ -1,5 +1,7 @@
+@import '../styles/colors.scss';
+
 .authed-user {
-  color: white;
+  color: $white;
 }
 
 .user-avatar {
@@ -21,5 +23,5 @@
 }
 
 .dropdown.nav-item > a {
-  color: white;
+  color: $white;
 }

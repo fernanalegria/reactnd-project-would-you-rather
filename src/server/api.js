@@ -2,7 +2,8 @@ import {
   _getUsers,
   _getQuestions,
   _saveQuestion,
-  _saveQuestionAnswer
+  _saveQuestionAnswer,
+  _saveUser
 } from './_DATA.js';
 
 export const getInitialData = () =>
@@ -14,3 +15,5 @@ export const getInitialData = () =>
 export const saveQuestionAnswer = info => _saveQuestionAnswer(info);
 
 export const saveQuestion = info => _saveQuestion(info);
+
+export const saveUser = info => _saveUser(info);

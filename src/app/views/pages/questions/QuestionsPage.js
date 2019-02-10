@@ -48,18 +48,12 @@ class QuestionsPage extends Component {
             answeredQuestions.length > 0 ? (
               <PollsList pollIds={answeredQuestions} />
             ) : (
-              <NoPolls
-                text="Ops! It seems like you've already answered all the questions.
-            Try adding new ones :)"
-              />
+              <NoPolls text="It seems like you haven't answered any questions yet. Let's play!" />
             )
           ) : unansweredQuestions.length > 0 ? (
             <PollsList pollIds={unansweredQuestions} />
           ) : (
-            <NoPolls
-              text="Ops! It seems like you've already answered all the questions.
-            Try adding new ones :)"
-            />
+            <NoPolls text="Ops! It seems like you've already answered all the questions. Try adding new ones :)" />
           )}
         </Card.Body>
       </Card>
