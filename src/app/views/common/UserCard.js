@@ -11,7 +11,7 @@ const UserCard = ({ authorName, avatarURL, askedBy, children }) => (
     </Card.Header>
     <Card.Body>
       <Row className="no-gutters">
-        <Col md="auto">
+        <Col md="auto" className='mr-3'>
           <UserAvatar url={avatarURL} />
         </Col>
         <Col className="user-card-details">{children}</Col>

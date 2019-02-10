@@ -35,7 +35,7 @@ code {
 }
 
 .invalid-field {
-  border-color: #dc3545 !important;
+  border-color: $punch !important;
 }
 
 .show-invalid {
@@ -74,8 +74,7 @@ code {
 }
 
 .user-card-details {
-  padding-left: 20px;
-  border-left: 1px solid #eee;
+  border-left: 1px solid $gallery;
   flex: 1;
   overflow: hidden;
   display: flex;

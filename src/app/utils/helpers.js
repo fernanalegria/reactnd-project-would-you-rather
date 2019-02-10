@@ -22,3 +22,14 @@ const roundPercentage = percentage =>
   percentage % 1 === 0.5 && percentage < 50
     ? Math.floor(percentage)
     : Math.round(percentage);
+
+export const getUserScore = user => {
+  const answered = Object.keys(user.answers).length;
+  const created = user.questions.length;
+
+  return {
+    answered,
+    created,
+    totalScore: answered + created
+  }
+}
