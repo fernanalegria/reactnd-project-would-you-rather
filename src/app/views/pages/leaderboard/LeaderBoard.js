@@ -16,7 +16,7 @@ const LeaderBoard = props => (
 
 const mapStateToProps = ({ users }) => ({
   userIds: Object.keys(users).sort(
-    (a, b) => getUserScore(users[b]) - getUserScore(users[a])
+    (a, b) => getUserScore(users[b]).totalScore - getUserScore(users[a]).totalScore
   )
 });
 
