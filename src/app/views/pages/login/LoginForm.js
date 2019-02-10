@@ -29,10 +29,9 @@ class LoginForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { users, setAuthedUser, history } = this.props;
+    const { username, password } = this.state;
     const user = users.find(
-      user =>
-        user.name === this.state.username &&
-        user.password === this.state.password
+      user => user.name === username && user.password === password
     );
     if (user) {
       setAuthedUser(user.id).then(() => {
@@ -78,9 +77,6 @@ class LoginForm extends Component {
             Invalid username or password
           </Form.Control.Feedback>
         </Form.Group>
-        <div className="mb-3">
-          <Form.Check type="checkbox" label="Remember me" />
-        </div>
         <Button
           variant="primary"
           type="submit"
