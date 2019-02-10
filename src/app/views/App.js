@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
-          <LoadingBar />
+          <LoadingBar className="initial-loading-bar" scope="initial" />
           {!this.props.loading && (
             <Switch>
               <Route path="/" exact component={LoginPage} />

@@ -38,7 +38,7 @@ export const handleAddQuestion = (optionOneText, optionTwoText, callback) => (
 ) => {
   const { authedUser } = getState();
 
-  dispatch(showLoading());
+  dispatch(showLoading('home'));
   return saveQuestion({
     optionOneText,
     optionTwoText,
@@ -48,7 +48,7 @@ export const handleAddQuestion = (optionOneText, optionTwoText, callback) => (
       dispatch(addQuestion(question, authedUser));
     })
     .then(() => {
-      dispatch(hideLoading());
+      dispatch(hideLoading('home'));
       if (callback) {
         callback();
       }
