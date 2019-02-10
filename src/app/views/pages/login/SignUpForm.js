@@ -56,15 +56,20 @@ class SignUpForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { password, confirmPassword, username, avatarURL } = this.state;
-    const { addUser, toggleForm } = this.props;
+    const { addUser, onUserCreated, users } = this.props;
     if (password !== confirmPassword) {
       this.setState({
         isInvalid: true
       });
     } else {
-      addUser(username, password, avatarURL).then(() => {
-        toggleForm(false);
-      });
+      const user = Object.values(users).find(user => user.name === username);
+      if (user) {
+        onUserCreated(false);
+      } else {
+        addUser(username, password, avatarURL).then(() => {
+          onUserCreated(true);
+        });
+      }
     }
   };
 
@@ -143,12 +148,16 @@ class SignUpForm extends Component {
   }
 }
 
+const mapStateToProps = ({ users }) => ({
+  users
+});
+
 const mapDispatchToProps = {
   addUser: (name, password, avatarURL) =>
     userActions.handleAddUser(name, password, avatarURL)
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(SignUpForm);
