@@ -1,10 +1,8 @@
 let users = {
   sarahedo: {
     id: 'sarahedo',
-    // name: 'Sarah Edo',
-    // password: 's4r4h3d0',
-    name: 'a',
-    password: 'a',
+    name: 'Sarah Edo',
+    password: 's4r4h3d0',
     avatarURL: 'https://tylermcginnis.com/would-you-rather/sarah.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
