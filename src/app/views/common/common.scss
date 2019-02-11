@@ -25,3 +25,11 @@
 .dropdown.nav-item > a {
   color: $white;
 }
+
+@media (min-width: 992px) {
+  .log-out {
+    align-items: center !important;
+    justify-content: center !important;
+    display: flex !important;
+  }
+}

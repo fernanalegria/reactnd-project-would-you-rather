@@ -12,7 +12,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faCheckCircle,
   faUpload,
-  faExclamationTriangle
+  faExclamationTriangle,
+  faPowerOff
 } from '@fortawesome/free-solid-svg-icons';
 import { LastLocationProvider } from 'react-router-last-location';
 
@@ -52,7 +53,7 @@ const mapDispatchToProps = {
   handleFetchData: () => commonActions.handleFetchData()
 };
 
-library.add([faCheckCircle, faUpload, faExclamationTriangle]);
+library.add([faCheckCircle, faUpload, faExclamationTriangle, faPowerOff]);
 
 export default connect(
   mapStateToProps,
