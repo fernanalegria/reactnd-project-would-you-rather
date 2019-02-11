@@ -43,10 +43,9 @@ class LoginPage extends Component {
           show={created === true}
           onClose={this.onCloseAlert}
         >
-          <Alert.Heading>Congrats!</Alert.Heading>
           <p>
-            Your user was created successfully. Now you can log safely into the
-            app.
+            <span className="font-weight-bold">Congrats!</span> Your user was
+            created successfully. Now you can log safely into the app.
           </p>
         </Alert>
         <Alert
