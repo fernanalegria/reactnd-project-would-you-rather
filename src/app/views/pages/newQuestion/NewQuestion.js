@@ -55,9 +55,9 @@ class NewQuestion extends Component {
               <Col>
                 <hr />
               </Col>
-              <Col md="auto">
+              <div className="col-auto">
                 <Form.Text>OR</Form.Text>
-              </Col>
+              </div>
               <Col>
                 <hr />
               </Col>

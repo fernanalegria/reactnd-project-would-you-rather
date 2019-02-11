@@ -11,7 +11,7 @@ const Poll = ({ question }) =>
       avatarURL={question.author.avatarURL}
       askedBy={false}
     >
-      <div className="card-block pl-3">
+      <div className="card-block pl-md-3">
         <Card.Title>Would you rather...</Card.Title>
         <Card.Text className="one-liner">{`${question.optionOne.text} or ${
           question.optionTwo.text

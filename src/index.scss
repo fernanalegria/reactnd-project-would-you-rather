@@ -30,13 +30,10 @@ code {
   align-items: center;
 }
 
-.col-center {
-  margin: 0 auto;
-}
-
 .scroll-box {
   overflow-y: auto;
   height: 486px;
+  padding: 0 !important;
   &::-webkit-scrollbar-thumb {
     background-color: $pale-sky;
   }
@@ -66,12 +63,6 @@ code {
 }
 
 .user-card-details {
-  border-left: 1px solid $gallery;
-  flex: 1;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   p.one-liner {
     min-width: 0;
     white-space: nowrap;
@@ -94,4 +85,10 @@ code {
 .initial-loading-bar,
 .home-loading-bar {
   height: 2px;
+}
+
+@media (min-width: 768px) {
+  .user-card-details {
+    border-left: 1px solid $gallery;
+  }
 }
