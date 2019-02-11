@@ -26,19 +26,35 @@ class LoginPage extends Component {
     });
   };
 
+  onCloseAlert = () => {
+    this.setState({
+      created: null
+    });
+  };
+
   render() {
     const { register, created } = this.state;
 
     return (
       <Fragment>
-        <Alert dismissible variant="success" show={created === true}>
+        <Alert
+          dismissible
+          variant="success"
+          show={created === true}
+          onClose={this.onCloseAlert}
+        >
           <Alert.Heading>Congrats!</Alert.Heading>
           <p>
             Your user was created successfully. Now you can log safely into the
             app.
           </p>
         </Alert>
-        <Alert dismissible variant="warning" show={created === false}>
+        <Alert
+          dismissible
+          variant="warning"
+          show={created === false}
+          onClose={this.onCloseAlert}
+        >
           <p>
             Sorry, that username already exists in our database. Try with
             another one.
@@ -68,9 +84,7 @@ class LoginPage extends Component {
             </Card.Header>
             <Card.Body>
               {this.state.register ? (
-                <SignUpForm
-                  onUserCreated={this.onUserCreated}
-                />
+                <SignUpForm onUserCreated={this.onUserCreated} />
               ) : (
                 <LoginForm />
               )}
