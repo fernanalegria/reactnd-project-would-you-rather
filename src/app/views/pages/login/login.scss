@@ -7,7 +7,7 @@ html {
 
 .card-login {
   width: 100%;
-  max-width: 350px;
+  max-width: 320px;
   margin: 0 auto;
   .form-group {
     &:not(.profile-pic) {
@@ -105,7 +105,5 @@ html {
 
 .alert {
   position: absolute !important;
-  width: 20%;
-  top: 0;
-  right: 0;
+  width: 100%;
 }

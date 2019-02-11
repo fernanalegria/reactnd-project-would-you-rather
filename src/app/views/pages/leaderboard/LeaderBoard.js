@@ -5,7 +5,7 @@ import UserScore from './UserScore';
 import './leaderboard.scss';
 
 const LeaderBoard = props => (
-  <ol className="leader-board">
+  <ol className="leader-board p-0">
     {props.userIds.map(id => (
       <li key={id}>
         <UserScore id={id} />
