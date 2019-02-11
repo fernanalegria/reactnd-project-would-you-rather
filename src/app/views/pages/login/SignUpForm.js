@@ -83,16 +83,19 @@ class SignUpForm extends Component {
       isInvalid
     } = this.state;
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <Form.Group controlId="profile-pic" className="profile-pic">
-          <UserAvatar url={avatarURL} />
+      <Form
+        onSubmit={this.handleSubmit}
+        className="form-inline justify-content-center"
+      >
+        <Form.Group controlId="profile-pic" className="profile-pic text-center mb-2">
+          <UserAvatar url={avatarURL} className="mb-2 mx-2" />
           <Form.Control
             type="file"
             accept="image/png, image/jpeg"
             onChange={this.onImageUpload}
           />
-          <Form.Label className="p-2 ml-4 font-weight-normal">
-            <FontAwesomeIcon icon="upload" /> Choose a profile picture
+          <Form.Label className="p-2 mx-2 font-weight-normal">
+            <FontAwesomeIcon icon="upload" /> Choose an image
           </Form.Label>
           <Form.Control.Feedback
             type="invalid"
@@ -101,33 +104,34 @@ class SignUpForm extends Component {
             Please provide a valid image file.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group controlId="signup-username">
+        <Form.Group controlId="signup-username" className="w-100">
           <Form.Control
             type="text"
             placeholder="Username"
             value={username}
             onChange={this.handleUsernameChange}
+            className="w-100"
             required
             autoFocus
           />
           <Form.Label>Username</Form.Label>
         </Form.Group>
-        <Form.Group controlId="signup-password">
+        <Form.Group controlId="signup-password" className="w-100">
           <Form.Control
             type="password"
             placeholder="Password"
             required
-            className={isInvalid ? 'invalid-field' : ''}
+            className={`w-100 ${isInvalid ? 'invalid-field' : ''}`}
             value={password}
             onChange={this.handlePasswordChange}
           />
           <Form.Label>Password</Form.Label>
         </Form.Group>
-        <Form.Group controlId="signup-confirm-password">
+        <Form.Group controlId="signup-confirm-password" className="w-100">
           <Form.Control
             type="password"
             placeholder="Confirm password"
-            className={isInvalid ? 'invalid-field' : ''}
+            className={`w-100 ${isInvalid ? 'invalid-field' : ''}`}
             value={confirmPassword}
             onChange={this.handleConfirmPasswordChange}
             required

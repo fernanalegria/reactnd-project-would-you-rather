@@ -17,7 +17,7 @@ const BaseContainer = ({ children, align }) => {
 
   return (
     <Container className={`h-100 ${alignClass}`}>
-      <Row className="w-100">
+      <Row className="w-100 m-auto">
         <Col md="6" className="col-center">
           {children}
         </Col>
