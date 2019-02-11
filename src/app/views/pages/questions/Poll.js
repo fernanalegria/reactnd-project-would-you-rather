@@ -9,7 +9,6 @@ const Poll = ({ question }) =>
     <UserCard
       authorName={question.author.name}
       avatarURL={question.author.avatarURL}
-      askedBy={false}
     >
       <div className="card-block pl-md-3">
         <Card.Title>Would you rather...</Card.Title>

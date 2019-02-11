@@ -60,17 +60,16 @@ code {
 
 .user-card {
   margin: 20px;
-}
-
-.user-card-details {
-  p.one-liner {
-    min-width: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .card-text {
-    font-size: 0.8em;
+  .user-card-details {
+    p.one-liner {
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-text {
+      font-size: 0.8em;
+    }
   }
 }
 
@@ -88,7 +87,7 @@ code {
 }
 
 @media (min-width: 768px) {
-  .user-card-details {
+  .user-card .user-card-details {
     border-left: 1px solid $gallery;
   }
 }

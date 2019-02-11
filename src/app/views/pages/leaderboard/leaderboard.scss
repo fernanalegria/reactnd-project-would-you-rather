@@ -18,13 +18,11 @@ ol.leader-board {
         font-weight: bold;
       }
     }
-    .user-score-details {
-      border-left: 1px solid $gallery;
-      flex: 1;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+  }
+}
+
+@media (min-width: 768px) {
+  .user-score-details {
+    border-left: 1px solid $gallery;
   }
 }

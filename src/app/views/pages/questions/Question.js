@@ -38,7 +38,6 @@ class Question extends Component {
       <UserCard
         authorName={question.author.name}
         avatarURL={question.author.avatarURL}
-        askedBy={false}
       >
         <Form className="card-block pl-3" onSubmit={this.handleSubmit}>
           <Card.Title>Would you rather...</Card.Title>
