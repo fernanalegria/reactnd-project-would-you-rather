@@ -3,6 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+/**
+ * Wrapper container meant to hold centered content
+ */
 const BaseContainer = ({ children, align }) => {
   const alignClass = (alignProp => {
     switch (alignProp) {

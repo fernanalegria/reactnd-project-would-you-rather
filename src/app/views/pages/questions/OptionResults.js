@@ -3,6 +3,9 @@ import Card from 'react-bootstrap/Card';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+/**
+ * Card that informs about the voting stats of each answer to a question
+ */
 const OptionResults = ({ option, totalVotes, chosen, className = '' }) => (
   <Card
     className={`${className} ${chosen ? 'chosen-option font-weight-bold' : ''}`}

@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { computeResults } from '../../../utils/helpers';
 import OptionResults from './OptionResults';
 
+/**
+ * Card that informs about the voting stats of a particular question
+ */
 const QuestionResults = ({
   question: { author, optionOne, optionTwo },
   authedUser

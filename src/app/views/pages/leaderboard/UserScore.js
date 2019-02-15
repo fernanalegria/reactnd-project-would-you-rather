@@ -6,6 +6,9 @@ import UserCard from '../../common/UserCard';
 import { getUserScore } from '../../../utils/helpers';
 import { connect } from 'react-redux';
 
+/**
+ * Card to show the user's score
+ */
 const UserScore = ({ user }) => {
   const { answered, created, totalScore } = getUserScore(user);
   return (

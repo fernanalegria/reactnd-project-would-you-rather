@@ -4,6 +4,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import UserAvatar from './UserAvatar';
 
+/**
+ * Card composed by the username, his/her avatar and any children passed in
+ */
 const UserCard = ({
   authorName,
   avatarURL,

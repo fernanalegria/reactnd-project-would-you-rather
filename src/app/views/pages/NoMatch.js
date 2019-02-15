@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
 
+/**
+ * 404 Web page in case the user tries to access a url which doesn't exist
+ */
 const NoMatch = () => (
   <BaseContainer align="top">
     <h1 className="text-center">

@@ -4,6 +4,9 @@ import QuestionResults from './QuestionResults';
 import Card from 'react-bootstrap/Card';
 import { connect } from 'react-redux';
 
+/**
+ * Wrapper to show at a question's url and redirect to the proper component
+ */
 const QuestionContainer = props => {
   const { results, id } = props;
   if (results === null) {

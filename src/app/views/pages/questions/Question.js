@@ -11,17 +11,28 @@ const options = {
   optionTwo: 'optionTwo'
 };
 
+/**
+ * Form to actually answer the available questions
+ */
 class Question extends Component {
   state = {
     answer: ''
   };
 
+  /**
+   * Changes the answer according to the user input
+   * @param  {Event}
+   */
   selectOption = e => {
     this.setState({
       answer: e.target.value
     });
   };
 
+  /**
+   * Saves the answer picked by the user
+   * @param  {Event}
+   */
   handleSubmit = e => {
     const { question, answerQuestion } = this.props;
     e.preventDefault();

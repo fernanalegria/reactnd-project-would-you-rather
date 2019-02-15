@@ -6,6 +6,9 @@ import { authedUserActions } from '../../../state/ducks/authedUser';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+/**
+ * Form that lets the user log into the app
+ */
 class LoginForm extends Component {
   state = {
     username: '',
@@ -13,6 +16,10 @@ class LoginForm extends Component {
     isInvalid: false
   };
 
+  /**
+   * Changes the username according to the user input
+   * @param  {Event}
+   */
   handleUsernameChange = e => {
     this.setState({
       username: e.target.value,
@@ -20,6 +27,10 @@ class LoginForm extends Component {
     });
   };
 
+  /**
+   * Changes the password according to the user input
+   * @param  {Event}
+   */
   handlePasswordChange = e => {
     this.setState({
       password: e.target.value,
@@ -27,6 +38,11 @@ class LoginForm extends Component {
     });
   };
 
+  /**
+   * Compares the credentials against the existing users in database
+   * and logs them in if there's a match
+   * @param  {Event}
+   */
   handleSubmit = e => {
     e.preventDefault();
     const { users, setAuthedUser, history, lastLocation } = this.props;

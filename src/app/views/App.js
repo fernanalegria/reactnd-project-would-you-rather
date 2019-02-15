@@ -17,7 +17,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { LastLocationProvider } from 'react-router-last-location';
 
+/**
+ * Component that wraps the whole app
+ */
 class App extends Component {
+  /**
+   * Loads the initial data into the app
+   */
   componentDidMount() {
     this.props.handleFetchData();
   }

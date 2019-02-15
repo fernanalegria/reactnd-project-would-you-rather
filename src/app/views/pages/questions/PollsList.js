@@ -1,6 +1,9 @@
 import React from 'react';
 import Poll from './Poll';
 
+/**
+ * List of polls
+ */
 const PollsList = props => (
   <ol className="poll-list">
     {props.pollIds.map(id => (

@@ -8,6 +8,9 @@ import BaseContainer from '../common/BaseContainer';
 import LoadingBar from 'react-redux-loading';
 import LeaderBoard from './leaderboard';
 
+/**
+ * Home page where user is redirected after logging in
+ */
 const Home = () => (
   <Fragment>
     <NavigationBar />

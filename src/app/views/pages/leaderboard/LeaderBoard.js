@@ -4,6 +4,9 @@ import { getUserScore } from '../../../utils/helpers';
 import UserScore from './UserScore';
 import './leaderboard.scss';
 
+/**
+ * Ranking of users by created + answered questions
+ */
 const LeaderBoard = props => (
   <ol className="leader-board p-0">
     {props.userIds.map(id => (

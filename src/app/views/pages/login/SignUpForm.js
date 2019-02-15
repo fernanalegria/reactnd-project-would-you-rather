@@ -6,6 +6,9 @@ import UserAvatar from '../../common/UserAvatar';
 import { connect } from 'react-redux';
 import { userActions } from '../../../state/ducks/users';
 
+/**
+ * Form that lets the user sign up
+ */
 class SignUpForm extends Component {
   state = {
     avatarURL: '',
@@ -16,6 +19,10 @@ class SignUpForm extends Component {
     isInvalid: false
   };
 
+  /**
+   * Saves the uploaded image if the file type is valid
+   * @param  {Event}
+   */
   onImageUpload = e => {
     if (e.target.files.length > 0) {
       const file = e.target.files[0];
@@ -32,6 +39,10 @@ class SignUpForm extends Component {
     }
   };
 
+  /**
+   * Changes the username according to the user input
+   * @param  {Event}
+   */
   handleUsernameChange = e => {
     this.setState({
       username: e.target.value,
@@ -39,6 +50,10 @@ class SignUpForm extends Component {
     });
   };
 
+  /**
+   * Changes the password according to the user input
+   * @param  {Event}
+   */
   handlePasswordChange = e => {
     this.setState({
       password: e.target.value,
@@ -46,6 +61,10 @@ class SignUpForm extends Component {
     });
   };
 
+  /**
+   * Changes the "repeat password" field according to the user input
+   * @param  {Event}
+   */
   handleConfirmPasswordChange = e => {
     this.setState({
       confirmPassword: e.target.value,
@@ -53,6 +72,10 @@ class SignUpForm extends Component {
     });
   };
 
+  /**
+   * Signs up a new user if he/she doesn't exist yet
+   * @param  {Event}
+   */
   handleSubmit = e => {
     e.preventDefault();
     const { password, confirmPassword, username, avatarURL } = this.state;
@@ -87,7 +110,10 @@ class SignUpForm extends Component {
         onSubmit={this.handleSubmit}
         className="form-inline justify-content-center"
       >
-        <Form.Group controlId="profile-pic" className="profile-pic text-center mb-2">
+        <Form.Group
+          controlId="profile-pic"
+          className="profile-pic text-center mb-2"
+        >
           <UserAvatar url={avatarURL} className="mb-2 mx-2" />
           <Form.Control
             type="file"

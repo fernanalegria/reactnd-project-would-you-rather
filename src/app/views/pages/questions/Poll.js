@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import UserCard from '../../common/UserCard';
 
+/**
+ * Card to show an existing poll (answered or not)
+ */
 const Poll = ({ question }) =>
   question ? (
     <UserCard
