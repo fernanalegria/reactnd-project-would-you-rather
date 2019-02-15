@@ -3,12 +3,12 @@ import Question from './Question';
 import QuestionResults from './QuestionResults';
 import Card from 'react-bootstrap/Card';
 import { connect } from 'react-redux';
+import { string, bool } from 'prop-types';
 
 /**
  * Wrapper to show at a question's url and redirect to the proper component
  */
-const QuestionContainer = props => {
-  const { results, id } = props;
+const QuestionContainer = ({ results, id }) => {
   if (results === null) {
     return (
       <Card>
@@ -30,6 +30,11 @@ const mapStateToProps = ({ authedUser, users, questions }, props) => {
     id,
     results: questions[id] ? answers.includes(id) : null
   };
+};
+
+QuestionContainer.propTypes = {
+  id: string.isRequired,
+  results: bool
 };
 
 export default connect(mapStateToProps)(QuestionContainer);

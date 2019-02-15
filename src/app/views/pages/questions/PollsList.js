@@ -1,5 +1,6 @@
 import React from 'react';
 import Poll from './Poll';
+import { arrayOf, string } from 'prop-types';
 
 /**
  * List of polls
@@ -13,5 +14,9 @@ const PollsList = props => (
     ))}
   </ol>
 );
+
+PollsList.propTypes = {
+  pollIds: arrayOf(string).isRequired
+};
 
 export default PollsList;

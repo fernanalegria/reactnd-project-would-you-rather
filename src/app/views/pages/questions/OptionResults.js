@@ -2,11 +2,17 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { shape, number, bool, string } from 'prop-types';
 
 /**
  * Card that informs about the voting stats of each answer to a question
  */
-const OptionResults = ({ option, totalVotes, chosen, className = '' }) => (
+const OptionResults = ({
+  option,
+  totalVotes,
+  chosen = false,
+  className = ''
+}) => (
   <Card
     className={`${className} ${chosen ? 'chosen-option font-weight-bold' : ''}`}
     bg={chosen && 'info'}
@@ -28,5 +34,16 @@ const OptionResults = ({ option, totalVotes, chosen, className = '' }) => (
     </Card.Body>
   </Card>
 );
+
+OptionResults.propTypes = {
+  option: shape({
+    text: string.isRequired,
+    votesNumber: number.isRequired,
+    votesPerc: number.isRequired
+  }).isRequired,
+  totalVotes: number.isRequired,
+  chosen: bool,
+  className: string
+};
 
 export default OptionResults;

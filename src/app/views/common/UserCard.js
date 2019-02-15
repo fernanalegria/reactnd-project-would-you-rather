@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import UserAvatar from './UserAvatar';
+import { string, bool, node } from 'prop-types';
 
 /**
  * Card composed by the username, his/her avatar and any children passed in
@@ -29,5 +30,14 @@ const UserCard = ({
     </Card.Body>
   </Card>
 );
+
+UserCard.propTypes = {
+  authorName: string.isRequired,
+  avatarURL: string,
+  askedBy: bool.isRequired,
+  showHeader: bool.isRequired,
+  className: string,
+  children: node.isRequired
+};
 
 export default UserCard;

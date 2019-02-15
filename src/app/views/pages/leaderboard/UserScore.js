@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import UserCard from '../../common/UserCard';
 import { getUserScore } from '../../../utils/helpers';
 import { connect } from 'react-redux';
+import { userShape } from '../../propTypes';
 
 /**
  * Card to show the user's score
@@ -44,5 +45,9 @@ const UserScore = ({ user }) => {
 };
 
 const mapStateToProps = ({ users }, { id }) => ({ user: users[id] });
+
+UserScore.propTypes = {
+  user: userShape.isRequired
+};
 
 export default connect(mapStateToProps)(UserScore);

@@ -5,11 +5,18 @@ import { withLastLocation } from 'react-router-last-location';
 import { authedUserActions } from '../../../state/ducks/authedUser';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { arrayOf, func } from 'prop-types';
+import { userShape } from '../../propTypes';
 
 /**
  * Form that lets the user log into the app
  */
 class LoginForm extends Component {
+  static propTypes = {
+    users: arrayOf(userShape).isRequired,
+    setAuthedUser: func.isRequired
+  };
+
   state = {
     username: '',
     password: '',

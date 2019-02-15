@@ -7,11 +7,16 @@ import Button from 'react-bootstrap/Button';
 import { questionActions } from '../../../state/ducks/questions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { func } from 'prop-types';
 
 /**
  * Form that lets the user create a would you rather question
  */
 class NewQuestion extends Component {
+  static propTypes = {
+    addQuestion: func.isRequired
+  };
+
   state = {
     optionOneText: '',
     optionTwoText: ''

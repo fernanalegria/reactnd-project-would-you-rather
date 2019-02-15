@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { questionActions } from '../../../state/ducks/questions';
+import { questionShape } from '../../propTypes';
+import { func } from 'prop-types';
 
 const options = {
   optionOne: 'optionOne',
@@ -15,6 +17,11 @@ const options = {
  * Form to actually answer the available questions
  */
 class Question extends Component {
+  static propTypes = {
+    question: questionShape.isRequired,
+    answerQuestion: func.isRequired
+  };
+
   state = {
     answer: ''
   };

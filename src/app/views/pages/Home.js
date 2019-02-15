@@ -3,7 +3,6 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import NavigationBar from '../common/NavigationBar';
 import QuestionsPage, { QuestionContainer } from './questions';
 import NewQuestion from './newQuestion';
-import { connect } from 'react-redux';
 import BaseContainer from '../common/BaseContainer';
 import LoadingBar from 'react-redux-loading';
 import LeaderBoard from './leaderboard';
@@ -26,8 +25,4 @@ const Home = () => (
   </Fragment>
 );
 
-const mapStateToProps = ({ authedUser }) => ({
-  authedUser
-});
-
-export default withRouter(connect(mapStateToProps)(Home));
+export default withRouter(Home);

@@ -7,11 +7,17 @@ import './common.scss';
 import UserAvatar from './UserAvatar';
 import { authedUserActions } from '../../state/ducks/authedUser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { func } from 'prop-types';
+import { userShape } from '../propTypes';
 
 /**
  * Bar to navigate through the different web pages
  */
 class NavigationBar extends Component {
+  static propTypes = {
+    logOut: func.isRequired,
+    user: userShape.isRequired
+  };
   /**
    * Logs the user out and redirects them to the login page
    */

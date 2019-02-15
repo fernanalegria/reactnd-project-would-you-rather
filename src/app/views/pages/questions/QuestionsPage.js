@@ -5,11 +5,17 @@ import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
 import { connect } from 'react-redux';
 import './questions.scss';
+import { arrayOf, string } from 'prop-types';
 
 /**
  * Web page with lists of answered and unanswered questions
  */
 class QuestionsPage extends Component {
+  static propTypes = {
+    answeredQuestions: arrayOf(string).isRequired,
+    unansweredQuestions: arrayOf(string).isRequired
+  };
+
   state = {
     answered: false
   };

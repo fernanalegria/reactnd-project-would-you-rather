@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import UserCard from '../../common/UserCard';
+import { questionShape } from '../../propTypes';
 
 /**
  * Card to show an existing poll (answered or not)
@@ -37,5 +38,9 @@ const mapStateToProps = ({ questions, users }, { id }) => ({
     ? { ...questions[id], author: users[questions[id].author] }
     : null
 });
+
+Poll.propTypes = {
+  question: questionShape.isRequired
+};
 
 export default connect(mapStateToProps)(Poll);
