@@ -9,6 +9,7 @@ import { authedUserActions } from '../../state/ducks/authedUser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { func } from 'prop-types';
 import { userShape } from '../propTypes';
+import { rootUrl } from '../../../index';
 
 /**
  * Bar to navigate through the different web pages
@@ -24,7 +25,7 @@ class NavigationBar extends Component {
   logOut = () => {
     const { logOut, history } = this.props;
     logOut().then(() => {
-      history.push('/');
+      history.push(rootUrl);
     });
   };
 
@@ -40,23 +41,25 @@ class NavigationBar extends Component {
         <Navbar.Collapse>
           <Nav className="mr-auto">
             <Link
-              to="/questions"
+              to={`${rootUrl}/questions`}
               className={`nav-link ${
-                pathname === '/questions' ? 'active' : ''
+                pathname === `${rootUrl}/questions` ? 'active' : ''
               }`}
             >
               Questions
             </Link>
             <Link
-              to="/add"
-              className={`nav-link ${pathname === '/add' ? 'active' : ''}`}
+              to={`${rootUrl}/add`}
+              className={`nav-link ${
+                pathname === `${rootUrl}/add` ? 'active' : ''
+              }`}
             >
               New Question
             </Link>
             <Link
-              to="/leaderboard"
+              to={`${rootUrl}/leaderboard`}
               className={`nav-link ${
-                pathname === '/leaderboard' ? 'active' : ''
+                pathname === `${rootUrl}/leaderboard` ? 'active' : ''
               }`}
             >
               Leaderboard

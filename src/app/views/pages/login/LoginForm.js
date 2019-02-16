@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { arrayOf, func } from 'prop-types';
 import { userShape } from '../../propTypes';
+import { rootUrl } from '../../../../index';
 
 /**
  * Form that lets the user log into the app
@@ -61,13 +62,13 @@ class LoginForm extends Component {
       setAuthedUser(user.id).then(() => {
         if (
           lastLocation &&
-          (lastLocation.pathname.includes('questions') ||
-            lastLocation.pathname.includes('add') ||
-            lastLocation.pathname.includes('leaderboard'))
+          (lastLocation.pathname.includes(`${rootUrl}/questions`) ||
+            lastLocation.pathname.includes(`${rootUrl}/add`) ||
+            lastLocation.pathname.includes(`${rootUrl}/leaderboard`))
         ) {
           history.push(lastLocation);
         } else {
-          history.push('/questions');
+          history.push(`${rootUrl}/questions`);
         }
       });
     } else {

@@ -3,6 +3,7 @@ import BaseContainer from '../common/BaseContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
+import { rootUrl } from '../../../index';
 
 /**
  * 404 Web page in case the user tries to access a url which doesn't exist
@@ -16,7 +17,7 @@ const NoMatch = () => (
       Sorry, the requested page could not be found
     </h5>
     <Row>
-      <Link to="/" className="btn btn-secondary btn-sm mx-auto">
+      <Link to={rootUrl} className="btn btn-secondary btn-sm mx-auto">
         Go back to Login
       </Link>
     </Row>

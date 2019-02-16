@@ -14,4 +14,6 @@ const RootHtml = () => (
   </Provider>
 );
 
+export const rootUrl = '/reactnd-project-would-you-rather-starter';
+
 ReactDOM.render(<RootHtml />, document.getElementById('root'));

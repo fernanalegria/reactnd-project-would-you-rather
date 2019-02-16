@@ -17,6 +17,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { LastLocationProvider } from 'react-router-last-location';
 import { bool, func } from 'prop-types';
+import { rootUrl } from '../../index';
 
 /**
  * Component that wraps the whole app
@@ -41,9 +42,9 @@ class App extends Component {
             <LoadingBar className="initial-loading-bar" scope="initial" />
             {!this.props.loading && (
               <Switch>
-                <Route path="/" exact component={LoginPage} />
+                <Route path={rootUrl} exact component={LoginPage} />
                 <ProtectedRoute
-                  path="/(questions|add|leaderboard)"
+                  path={`${rootUrl}/(questions|add|leaderboard)`}
                   component={Home}
                 />
                 <Route component={NoMatch} />

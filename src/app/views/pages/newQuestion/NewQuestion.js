@@ -8,6 +8,7 @@ import { questionActions } from '../../../state/ducks/questions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { func } from 'prop-types';
+import { rootUrl } from '../../../../index';
 
 /**
  * Form that lets the user create a would you rather question
@@ -51,7 +52,7 @@ class NewQuestion extends Component {
     const { addQuestion, history } = this.props;
     e.preventDefault();
     addQuestion(optionOneText, optionTwoText).then(() => {
-      history.push('/questions');
+      history.push(`${rootUrl}/questions`);
     });
   };
 

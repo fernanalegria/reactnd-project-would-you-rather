@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import UserCard from '../../common/UserCard';
 import { questionShape } from '../../propTypes';
+import { rootUrl } from '../../../../index';
 
 /**
  * Card to show an existing poll (answered or not)
@@ -20,7 +21,7 @@ const Poll = ({ question }) =>
           question.optionTwo.text
         }?`}</Card.Text>
         <Link
-          to={`/questions/${question.id}`}
+          to={`${rootUrl}/questions/${question.id}`}
           className="btn btn-secondary btn-block btn-sm"
         >
           View Poll
