@@ -7,8 +7,20 @@ import './common.scss';
 import UserAvatar from './UserAvatar';
 import { authedUserActions } from '../../state/ducks/authedUser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { func } from 'prop-types';
+import { userShape } from '../propTypes';
 
+/**
+ * Bar to navigate through the different web pages
+ */
 class NavigationBar extends Component {
+  static propTypes = {
+    logOut: func.isRequired,
+    user: userShape.isRequired
+  };
+  /**
+   * Logs the user out and redirects them to the login page
+   */
   logOut = () => {
     const { logOut, history } = this.props;
     logOut().then(() => {
@@ -56,7 +68,7 @@ class NavigationBar extends Component {
               <UserAvatar url={avatarURL} size="sm" className="mx-2" />
               <span className="authed-user">{name}</span>
             </Navbar.Text>
-            <Nav.Link onClick={this.logOut} className='log-out'>
+            <Nav.Link onClick={this.logOut} className="log-out">
               <FontAwesomeIcon icon="power-off" />
             </Nav.Link>
           </Nav>

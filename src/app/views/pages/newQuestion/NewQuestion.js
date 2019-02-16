@@ -7,25 +7,45 @@ import Button from 'react-bootstrap/Button';
 import { questionActions } from '../../../state/ducks/questions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { func } from 'prop-types';
 
+/**
+ * Form that lets the user create a would you rather question
+ */
 class NewQuestion extends Component {
+  static propTypes = {
+    addQuestion: func.isRequired
+  };
+
   state = {
     optionOneText: '',
     optionTwoText: ''
   };
 
+  /**
+   * Changes the first possible answer according to the user input
+   * @param  {Event}
+   */
   handleOptionOneChange = e => {
     this.setState({
       optionOneText: e.target.value
     });
   };
 
+  /**
+   * Changes the second possible answer according to the user input
+   * @param  {Event}
+   */
   handleOptionTwoChange = e => {
     this.setState({
       optionTwoText: e.target.value
     });
   };
 
+  /**
+   * Saves a new question in the database and redirects to the list of questions
+   * @param  {Event}
+   */
   handleSubmit = e => {
     const { optionOneText, optionTwoText } = this.state;
     const { addQuestion, history } = this.props;

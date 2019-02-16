@@ -7,18 +7,29 @@ import Alert from 'react-bootstrap/Alert';
 import BaseContainer from '../../common/BaseContainer';
 import './login.scss';
 
+/**
+ * Page available at root to log in and sign up
+ */
 class LoginPage extends Component {
   state = {
     register: false,
     created: null
   };
 
+  /**
+   * Changes from log in to sign up and viceversa
+   * @param  {boolean} register
+   */
   toggleForm = register => {
     this.setState({
       register
     });
   };
 
+  /**
+   * Shows an alert determining whether the user was created or not
+   * @param  {boolean} created
+   */
   onUserCreated = created => {
     this.setState({
       register: !created,
@@ -26,6 +37,9 @@ class LoginPage extends Component {
     });
   };
 
+  /**
+   * Hides the alerts
+   */
   onCloseAlert = () => {
     this.setState({
       created: null

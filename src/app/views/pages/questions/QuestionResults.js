@@ -3,7 +3,12 @@ import UserCard from '../../common/UserCard';
 import { connect } from 'react-redux';
 import { computeResults } from '../../../utils/helpers';
 import OptionResults from './OptionResults';
+import { questionResultsShape } from '../../propTypes';
+import { string } from 'prop-types';
 
+/**
+ * Card that informs about the voting stats of a particular question
+ */
 const QuestionResults = ({
   question: { author, optionOne, optionTwo },
   authedUser
@@ -58,6 +63,11 @@ const mapStateToProps = ({ questions, users, authedUser }, { id }) => {
     },
     authedUser
   };
+};
+
+QuestionResults.propTypes = {
+  question: questionResultsShape.isRequired,
+  authedUser: string.isRequired
 };
 
 export default connect(mapStateToProps)(QuestionResults);

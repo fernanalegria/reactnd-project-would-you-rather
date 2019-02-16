@@ -16,8 +16,19 @@ import {
   faPowerOff
 } from '@fortawesome/free-solid-svg-icons';
 import { LastLocationProvider } from 'react-router-last-location';
+import { bool, func } from 'prop-types';
 
+/**
+ * Component that wraps the whole app
+ */
 class App extends Component {
+  static propTypes = {
+    loading: bool.isRequired,
+    handleFetchData: func.isRequired
+  };
+  /**
+   * Loads the initial data into the app
+   */
   componentDidMount() {
     this.props.handleFetchData();
   }
