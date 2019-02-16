@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { node, string } from 'prop-types';
+import { elementType, string } from 'prop-types';
 
 /**
  * Route only accessible if the user has logged in
@@ -20,7 +20,7 @@ const mapStateToProps = ({ authedUser }) => ({
 });
 
 ProtectedRoute.propTypes = {
-  component: node.isRequired,
+  component: elementType.isRequired,
   authedUser: string
 };
 
