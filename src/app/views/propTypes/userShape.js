@@ -1,10 +1,10 @@
-import { shape, string, arrayOf } from 'prop-types';
+import { shape, string, arrayOf, objectOf } from 'prop-types';
 
 export default shape({
   id: string.isRequired,
   name: string.isRequired,
   password: string.isRequired,
   avatarURL: string,
-  answers: shape.isRequired,
+  answers: objectOf(string).isRequired,
   questions: arrayOf(string).isRequired
 });

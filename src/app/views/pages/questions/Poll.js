@@ -40,7 +40,7 @@ const mapStateToProps = ({ questions, users }, { id }) => ({
 });
 
 Poll.propTypes = {
-  question: questionShape.isRequired
+  question: questionShape
 };
 
 export default connect(mapStateToProps)(Poll);
