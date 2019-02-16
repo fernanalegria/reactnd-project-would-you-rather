@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UserAvatar from '../../common/UserAvatar';
 import { connect } from 'react-redux';
 import { userActions } from '../../../state/ducks/users';
-import { func, shape } from 'prop-types';
+import { func, objectOf } from 'prop-types';
+import { userShape } from '../../propTypes';
 
 /**
  * Form that lets the user sign up
@@ -14,7 +15,7 @@ class SignUpForm extends Component {
   static propTypes = {
     onUserCreated: func.isRequired,
     addUser: func.isRequired,
-    users: shape.isRequired
+    users: objectOf(userShape).isRequired
   };
 
   state = {

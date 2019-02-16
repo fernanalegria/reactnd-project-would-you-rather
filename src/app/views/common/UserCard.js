@@ -34,8 +34,8 @@ const UserCard = ({
 UserCard.propTypes = {
   authorName: string.isRequired,
   avatarURL: string,
-  askedBy: bool.isRequired,
-  showHeader: bool.isRequired,
+  askedBy: bool,
+  showHeader: bool,
   className: string,
   children: node.isRequired
 };
