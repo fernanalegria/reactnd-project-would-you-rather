@@ -2,7 +2,8 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: ,
+    password: 's4r4h3d0',
+    avatarURL: 'https://tylermcginnis.com/would-you-rather/sarah.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +15,8 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: ,
+    password: 'TyL3rmCg1nn1s',
+    avatarURL: 'https://tylermcginnis.com/would-you-rather/tyler.jpg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +26,8 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: ,
+    password: 'j0HnD03',
+    avatarURL: 'https://tylermcginnis.com/would-you-rather/dan.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
@@ -147,6 +150,17 @@ function formatQuestion ({ optionOneText, optionTwoText, author }) {
   }
 }
 
+function formatUser ({ name, avatarURL, password }) {
+  return {
+    id: generateUID(),
+    name,
+    password,
+    avatarURL,
+    answers: {},
+    questions: []
+  }
+}
+
 export function _saveQuestion (question) {
   return new Promise((res, rej) => {
     const authedUser = question.author;
@@ -167,6 +181,21 @@ export function _saveQuestion (question) {
       }
 
       res(formattedQuestion)
+    }, 1000)
+  })
+}
+
+export function _saveUser (user) {
+  return new Promise((res, rej) => {
+    const formattedUser = formatUser(user);
+
+    setTimeout(() => {
+      users = {
+        ...users,
+        [formattedUser.id]: formattedUser
+      }
+
+      res(formattedUser)
     }, 1000)
   })
 }

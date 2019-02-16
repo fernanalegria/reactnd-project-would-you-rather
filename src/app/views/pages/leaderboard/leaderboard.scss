@@ -1,0 +1,28 @@
+@import '../../styles/colors.scss';
+
+ol.leader-board {
+  list-style: none;
+  counter-reset: leader-board-counter;
+  li {
+    counter-increment: leader-board-counter;
+    > .card > .card-body {
+      position: relative;
+      &::before {
+        content: counter(leader-board-counter);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $loblolly;
+        padding: 0.2em 0.7em 0.7em 0.5em;
+        border-radius: 0 0 100% 0;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .user-score-details {
+    border-left: 1px solid $gallery;
+  }
+}
