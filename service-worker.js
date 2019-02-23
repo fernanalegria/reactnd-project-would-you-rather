@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/reactnd-project-would-you-rather-starter/precache-manifest.4025b68d29556c3c9d4f3c3a5fa556d7.js"
+  "/reactnd-project-would-you-rather/precache-manifest.3985490173aa09ce8c7739830ff5335a.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/reactnd-project-would-you-rather-starter/index.html", {
+workbox.routing.registerNavigationRoute("/reactnd-project-would-you-rather/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

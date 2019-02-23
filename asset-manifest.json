@@ -1,15 +1,15 @@
 {
-  "main.css": "/reactnd-project-would-you-rather-starter/static/css/main.6444e430.chunk.css",
-  "main.js": "/reactnd-project-would-you-rather-starter/static/js/main.59cdf9bb.chunk.js",
-  "main.js.map": "/reactnd-project-would-you-rather-starter/static/js/main.59cdf9bb.chunk.js.map",
-  "runtime~main.js": "/reactnd-project-would-you-rather-starter/static/js/runtime~main.4b194843.js",
-  "runtime~main.js.map": "/reactnd-project-would-you-rather-starter/static/js/runtime~main.4b194843.js.map",
-  "static/css/2.9eaec080.chunk.css": "/reactnd-project-would-you-rather-starter/static/css/2.9eaec080.chunk.css",
-  "static/js/2.d0f16cfd.chunk.js": "/reactnd-project-would-you-rather-starter/static/js/2.d0f16cfd.chunk.js",
-  "static/js/2.d0f16cfd.chunk.js.map": "/reactnd-project-would-you-rather-starter/static/js/2.d0f16cfd.chunk.js.map",
-  "index.html": "/reactnd-project-would-you-rather-starter/index.html",
-  "precache-manifest.4025b68d29556c3c9d4f3c3a5fa556d7.js": "/reactnd-project-would-you-rather-starter/precache-manifest.4025b68d29556c3c9d4f3c3a5fa556d7.js",
-  "service-worker.js": "/reactnd-project-would-you-rather-starter/service-worker.js",
-  "static/css/2.9eaec080.chunk.css.map": "/reactnd-project-would-you-rather-starter/static/css/2.9eaec080.chunk.css.map",
-  "static/css/main.6444e430.chunk.css.map": "/reactnd-project-would-you-rather-starter/static/css/main.6444e430.chunk.css.map"
+  "main.css": "/reactnd-project-would-you-rather/static/css/main.6444e430.chunk.css",
+  "main.js": "/reactnd-project-would-you-rather/static/js/main.59cdf9bb.chunk.js",
+  "main.js.map": "/reactnd-project-would-you-rather/static/js/main.59cdf9bb.chunk.js.map",
+  "runtime~main.js": "/reactnd-project-would-you-rather/static/js/runtime~main.895c7a6f.js",
+  "runtime~main.js.map": "/reactnd-project-would-you-rather/static/js/runtime~main.895c7a6f.js.map",
+  "static/css/2.9eaec080.chunk.css": "/reactnd-project-would-you-rather/static/css/2.9eaec080.chunk.css",
+  "static/js/2.d0f16cfd.chunk.js": "/reactnd-project-would-you-rather/static/js/2.d0f16cfd.chunk.js",
+  "static/js/2.d0f16cfd.chunk.js.map": "/reactnd-project-would-you-rather/static/js/2.d0f16cfd.chunk.js.map",
+  "index.html": "/reactnd-project-would-you-rather/index.html",
+  "precache-manifest.3985490173aa09ce8c7739830ff5335a.js": "/reactnd-project-would-you-rather/precache-manifest.3985490173aa09ce8c7739830ff5335a.js",
+  "service-worker.js": "/reactnd-project-would-you-rather/service-worker.js",
+  "static/css/2.9eaec080.chunk.css.map": "/reactnd-project-would-you-rather/static/css/2.9eaec080.chunk.css.map",
+  "static/css/main.6444e430.chunk.css.map": "/reactnd-project-would-you-rather/static/css/main.6444e430.chunk.css.map"
 }
